@@ -351,6 +351,9 @@ MonoBehaviour:
   evadeInput: 0
   attackInput: 0
   dashInput: 0
+  snapshots:
+  - {fileID: 4853378959156189487, guid: cfacdf346d79b034883d96139e5c9e30, type: 2}
+  - {fileID: 7988242668691471773, guid: cfacdf346d79b034883d96139e5c9e30, type: 2}
 --- !u!114 &1572636797231746185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,7 +496,7 @@ AudioSource:
   m_GameObject: {fileID: 702138441007640150}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5965223662100965127, guid: cfacdf346d79b034883d96139e5c9e30, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0

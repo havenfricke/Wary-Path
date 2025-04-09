@@ -4,6 +4,7 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using ExitGames.Client.Photon;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviourPun, IPunObservable, IInRoomCallbacks
 {
@@ -51,7 +52,8 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable, IInRoomCallbacks
     // PhotonTransformView component reference (added via Inspector)
     private PhotonTransformView photonTransformView;
 
-
+    [Header("Mixer Snapshots")]
+    [SerializeField] public AudioMixerSnapshot[] snapshots;
 
     private void Awake()
     {
@@ -278,6 +280,8 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable, IInRoomCallbacks
             LockOnOrigin potentialTarget = collider.transform.root.GetComponentInChildren<LockOnOrigin>();
             if (potentialTarget != null)
             {
+                snapshots[1].TransitionTo(3);
+
                 // Avoid picking up our own lock-on component if it somehow gets detected
                 if (potentialTarget == myLockOnOrigin)
                     continue;
@@ -295,6 +299,11 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable, IInRoomCallbacks
                     closestDistance = distance;
                     closestLockOn = potentialTarget;
                 }
+            }
+
+            if(potentialTarget == null)
+            {
+                snapshots[0].TransitionTo(3);
             }
         }
 
