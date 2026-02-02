@@ -79,9 +79,8 @@ public class EquippedWeapon : MonoBehaviourPun
         currentWeaponData = data;
     }
 
-    /// <summary>
+
     /// Stows the equipped weapon and returns its persistent data.
-    /// </summary>
     public WeaponData StowWeapon()
     {
         if (weapon != null)
