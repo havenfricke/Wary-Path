@@ -39,9 +39,7 @@ public class EquippedWeapon : MonoBehaviourPun
         return data;
     }
 
-    /// <summary>
     /// Equips a weapon using the persistent data from inventory.
-    /// </summary>
     public void EquipWeapon(WeaponData data)
     {
         if (weapon != null)
